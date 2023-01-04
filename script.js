@@ -15,7 +15,7 @@ function setActiveContent(el) {
         .classList.add('show-active');
 }
 
-function setActiveTab(el){
+function setActiveTab(el) {
     var tabs = document.getElementsByClassName('tab');
     for (var tab of tabs) {
         tab.classList.remove('tab-active');
@@ -26,22 +26,33 @@ function setActiveTab(el){
 // add click listener to each tab
 var tabs = document.getElementsByClassName('tab');
 for (var tab of tabs) {
-    tab.addEventListener('click', function(e) {
+    tab.addEventListener('click', function (e) {
         setActiveContent(e.currentTarget);
         setActiveTab(e.currentTarget);
     })
 }
 
+const dark = document.getElementById('dark');
+const light = document.getElementById('light');
 
 
-let quantityValue = parseInt(document.querySelector('.input-quantity').value) 
+dark.addEventListener('click', function onClick(event) {
+    document.body.style.backgroundColor = 'grey';
+});
 
-document.querySelector('.plus').addEventListener('click',()=>{
+light.addEventListener('click', function onClick(event) {
+    document.body.style.backgroundColor = 'white';
+});
+
+
+let quantityValue = parseInt(document.querySelector('.input-quantity').value)
+
+document.querySelector('.plus').addEventListener('click', () => {
     quantityValue = quantityValue + 1
     document.querySelector('.input-quantity').value = `${quantityValue}`
 })
-document.querySelector('.minus').addEventListener('click',()=>{
-    if(quantityValue>1){
+document.querySelector('.minus').addEventListener('click', () => {
+    if (quantityValue > 1) {
         quantityValue = quantityValue - 1
     }
     document.querySelector('.input-quantity').value = `${quantityValue}`
