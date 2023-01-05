@@ -32,16 +32,23 @@ for (var tab of tabs) {
     })
 }
 
-const dark = document.getElementById('dark');
+const grey = document.getElementById('grey');
 const light = document.getElementById('light');
+const dark = document.getElementById('dark');
 
 
-dark.addEventListener('click', function onClick(event) {
+grey.addEventListener('click', function onClick(event) {
     document.body.style.backgroundColor = 'grey';
 });
 
 light.addEventListener('click', function onClick(event) {
     document.body.style.backgroundColor = 'white';
+    document.body.style.color = 'black';
+});
+
+dark.addEventListener('click', function onClick(event) {
+    document.body.style.backgroundColor = 'black';
+    document.body.style.color = 'white';
 });
 
 
